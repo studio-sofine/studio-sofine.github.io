@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Sofine — Sofía</title>
+<meta name="description" content="Studio Sofine: estudio creativo de Sofía. Identidad visual, gestión de redes y diseño para redes sociales para emprendedores y marcas que buscan crecer.">
+<link rel="icon" type="image/svg+xml" href="imagenes/isologo.svg">
+<link rel="apple-touch-icon" href="imagenes/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Studio Sofine — Sofía">
+<meta property="og:description" content="Estudio creativo que ayuda a emprendedores y negocios a construir una presencia digital profesional mediante identidad visual, diseño y estrategia de contenido.">
+<meta property="og:image" content="imagenes/isologo-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Studio Sofine — Sofía">
+<meta name="twitter:description" content="Estudio creativo que ayuda a emprendedores y negocios a construir una presencia digital profesional mediante identidad visual, diseño y estrategia de contenido.">
+<meta name="twitter:image" content="imagenes/isologo-og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rojo-oscuro:#71150F;
+    --carmin:#a1182c;
+    --rosa:#f6b7cf;
+    --azul:#bad4ed;
+    --crema:#eee4da;
+
+    --titulo: "Cormorant Garamond", ui-serif, Georgia, "Times New Roman", serif;
+    --cuerpo: "Lato", -apple-system, "Segoe UI", sans-serif;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--crema);
+    color:var(--rojo-oscuro);
+    font-family:var(--cuerpo);
+    font-size:18px;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3{
+    font-family:var(--titulo);
+    font-weight:500;
+    letter-spacing:-0.01em;
+    color:var(--rojo-oscuro);
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  img{max-width:100%;display:block;}
+
+  .wrap{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+
+
+  /* ---------- marquee banner ---------- */
+  .marquee{
+    background:var(--rojo-oscuro);
+    overflow:hidden;
+    white-space:nowrap;
+    padding:8px 0;
+    border-top:1px solid rgba(238,228,218,0.2);
+    border-bottom:1px solid rgba(238,228,218,0.2);
+  }
+  .marquee-track{
+    display:inline-flex;
+    align-items:center;
+    animation:marquee 26s linear infinite;
+  }
+  .marquee-track span{
+    font-family:var(--titulo);
+    font-style:italic;
+    font-size:14px;
+    letter-spacing:0.03em;
+    color:var(--crema);
+    padding:0 20px;
+    flex-shrink:0;
+    text-transform:uppercase;
+  }
+  .marquee-track span.dot{
+    font-style:normal;
+    color:var(--rosa);
+  }
+  @keyframes marquee{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .marquee-track{animation:none;}
+  }
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(238,228,218,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(113,21,15,0.08);
+  }
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 32px;
+    max-width:1100px;
+    margin:0 auto;
+    position:relative;
+  }
+  .logo{
+    font-family:var(--titulo);
+    font-size:22px;
+    letter-spacing:0.02em;
+  }
+  .logo img{
+    height:48px;
+    width:auto;
+    display:block;
+  }
+  .navlinks{
+    display:flex;
+    align-items:center;
+    gap:32px;
+    font-size:16px;
+  }
+  .navlinks a{
+    position:relative;
+    padding-bottom:2px;
+  }
+  .navlinks a::after{
+    content:"";
+    position:absolute;left:0;bottom:0;
+    width:0;height:2px;
+    background:var(--azul);
+    transition:width 0.25s ease;
+  }
+  .navlinks a:hover::after{width:100%;}
+
+  .hamburger{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    width:32px;height:32px;
+    background:none;border:none;
+    cursor:pointer;
+    padding:0;
+  }
+  .hamburger span{
+    display:block;
+    width:100%;height:2px;
+    background:var(--rojo-oscuro);
+    transition:transform 0.25s ease, opacity 0.25s ease;
+  }
+  .hamburger.activo span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.activo span:nth-child(2){opacity:0;}
+  .hamburger.activo span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  @media (max-width:640px){
+    .hamburger{display:flex;}
+    .navlinks{
+      display:flex;
+      position:absolute;
+      top:100%;left:0;right:0;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:0;
+      background:var(--crema);
+      border-bottom:1px solid rgba(113,21,15,0.08);
+      max-height:0;
+      overflow:hidden;
+      opacity:0;
+      transition:max-height 0.3s ease, opacity 0.25s ease;
+    }
+    .navlinks.activo{
+      max-height:320px;
+      opacity:1;
+    }
+    .navlinks a{
+      width:100%;
+      padding:16px 32px;
+      border-top:1px solid rgba(113,21,15,0.06);
+    }
+    .navlinks a.btn{
+      margin:16px 32px;
+      width:calc(100% - 64px);
+      text-align:center;
+      border-top:none;
+    }
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding:90px 0 80px;
+    overflow:hidden;
+  }
+  .hero-inner{position:relative;z-index:2;}
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    font-size:15px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--rojo-oscuro);
+    margin-bottom:28px;
+  }
+  .hero h1{
+    font-size:clamp(32px, 5vw, 54px);
+    line-height:1.12;
+    max-width:820px;
+    margin-bottom:36px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--carmin);
+  }
+  .hero-sub{
+    font-size:19px;
+    max-width:560px;
+    margin-bottom:36px;
+    opacity:0.85;
+  }
+  .hero-btns{
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px;
+  }
+  .btn{
+    display:inline-block;
+    background:var(--carmin);
+    color:var(--crema);
+    font-family:var(--cuerpo);
+    font-size:17px;
+    padding:16px 34px;
+    border-radius:40px;
+    border:2px solid var(--carmin);
+    cursor:pointer;
+    transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  }
+  .btn:hover{
+    background:transparent;
+    color:var(--carmin);
+    transform:translateY(-2px);
+  }
+  .btn-outline{
+    background:transparent;
+    color:var(--rojo-oscuro);
+    border:2px solid var(--rojo-oscuro);
+  }
+  .btn-outline:hover{
+    background:var(--azul);
+    border-color:var(--azul);
+    color:var(--rojo-oscuro);
+  }
+  .btn-light{
+    background:var(--crema);
+    color:var(--rojo-oscuro);
+    border:2px solid var(--crema);
+  }
+  .btn-light:hover{
+    background:transparent;
+    color:var(--crema);
+  }
+
+  /* ---------- section basics ---------- */
+  section{padding:90px 0;}
+  .eyebrow-sm{
+    font-size:14px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--rojo-oscuro);
+    margin-bottom:14px;
+    display:block;
+  }
+  .section-title{
+    font-size:clamp(30px,4vw,44px);
+    margin-bottom:44px;
+    max-width:600px;
+  }
+  .servicios-intro{
+    max-width:560px;
+    font-size:18px;
+    margin-top:-24px;
+    margin-bottom:44px;
+    opacity:0.85;
+  }
+
+  /* ---------- sobre mi ---------- */
+  .sobre{
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+  }
+  .foto-wrap{
+    position:relative;
+    max-width:480px;
+    margin:0 auto;
+  }
+  .foto-marco{
+    border-radius:28px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(113,21,15,0.18);
+    line-height:0;
+  }
+  .foto-marco img{
+    width:100%;
+    height:auto;
+    display:block;
+  }
+  .foto-marco span{
+    font-family:var(--titulo);
+    font-size:17px;
+    color:var(--rojo-oscuro);
+    background:rgba(246,183,207,0.55);
+    padding:10px 20px;
+    border-radius:30px;
+  }
+  .sobre h2{
+    font-size:clamp(28px,3.6vw,42px);
+    margin-bottom:26px;
+  }
+  .sobre p{margin-bottom:20px;font-size:17px;}
+  .sobre-tagline{
+    font-family:var(--titulo);
+    font-style:italic;
+    font-size:22px;
+    color:var(--rojo-oscuro);
+    border-left:3px solid var(--rosa);
+    padding-left:18px;
+    margin-top:8px;
+  }
+  .sobre .firma{
+    font-family:var(--titulo);
+    font-style:italic;
+    font-size:24px;
+    margin-top:12px;
+    color:var(--rojo-oscuro);
+  }
+
+  /* ---------- servicios ---------- */
+  .servicios-bg{
+    background:var(--rojo-oscuro);
+    color:var(--crema);
+  }
+  .servicios-bg h2, .servicios-bg .eyebrow-sm{color:var(--crema);}
+  .servicios-bg .eyebrow-sm{opacity:0.75;}
+  .servicios-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:2px;
+    background:rgba(238,228,218,0.15);
+    border-radius:20px;
+    overflow:hidden;
+  }
+  @media (max-width:700px){
+    .servicios-grid{grid-template-columns:1fr;}
+  }
+  .servicio{
+    background:var(--rojo-oscuro);
+    padding:44px 38px;
+    transition:background 0.25s ease;
+  }
+  .servicio:hover{background:#5c110c;}
+  .servicio .icon{
+    font-size:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:48px;height:48px;
+    border-radius:50%;
+    background:rgba(246,183,207,0.16);
+    margin-bottom:18px;
+  }
+  .servicio h3{
+    color:var(--crema);
+    font-size:23px;
+    margin-bottom:10px;
+  }
+  .servicio p{
+    font-size:16px;
+    opacity:0.82;
+  }
+
+  /* ---------- proyectos ---------- */
+  .proyectos-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:32px;
+  }
+  @media (max-width:800px){
+    .proyectos-grid{grid-template-columns:1fr 1fr;gap:24px;}
+  }
+  @media (max-width:560px){
+    .proyectos-grid{grid-template-columns:1fr;}
+  }
+  .proyecto-card{
+    display:flex;
+    flex-direction:column;
+    border-radius:28px;
+    overflow:hidden;
+    background:#fffdfb;
+    cursor:pointer;
+    box-shadow:0 4px 16px rgba(113,21,15,0.06);
+    transition:transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s cubic-bezier(.22,1,.36,1);
+  }
+  .proyecto-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 16px 34px rgba(113,21,15,0.12);
+  }
+  .proyecto-card:focus-visible{
+    outline:2px solid var(--azul);
+    outline-offset:3px;
+  }
+  .proyecto-img-wrap{
+    aspect-ratio:4/5;
+    overflow:hidden;
+    background:#f4efe8;
+  }
+  .proyecto-img{
+    width:100%;
+    height:100%;
+    background-size:contain !important;
+    background-repeat:no-repeat;
+    background-position:center;
+    transition:transform .6s cubic-bezier(.22,1,.36,1);
+  }
+  .proyecto-card:hover .proyecto-img{
+    transform:scale(1.03);
+  }
+  .p1 .proyecto-img{background:linear-gradient(135deg,var(--rojo-oscuro),var(--rosa));}
+  .p2 .proyecto-img{background:linear-gradient(135deg,var(--rosa),var(--azul));}
+  .p3 .proyecto-img{background:linear-gradient(135deg,var(--azul),var(--rojo-oscuro));}
+  .proyecto-info{
+    padding:32px 28px 32px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+  }
+  .proyecto-card .proyecto-tag{
+    font-family:var(--cuerpo);
+    font-size:11px;
+    letter-spacing:0.09em;
+    text-transform:uppercase;
+    color:var(--carmin);
+    opacity:0.75;
+    margin-bottom:14px;
+    display:block;
+  }
+  .proyecto-nombre{
+    font-family:var(--titulo);
+    font-size:26px;
+    line-height:1.15;
+    color:var(--rojo-oscuro);
+    margin-bottom:12px;
+  }
+  .proyecto-servicio{
+    font-family:var(--cuerpo);
+    font-size:14.5px;
+    color:var(--rojo-oscuro);
+    opacity:0.75;
+    margin-bottom:24px;
+  }
+  .proyecto-link{
+    margin-top:auto;
+    font-family:var(--cuerpo);
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:0.02em;
+    color:var(--rojo-oscuro);
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    transition:color .3s ease, gap .3s ease;
+  }
+  .proyecto-card:hover .proyecto-link{
+    color:var(--carmin);
+    gap:10px;
+  }
+  .proyectos-nota{
+    margin-top:28px;
+    font-size:15px;
+    color:var(--rojo-oscuro);
+    text-align:center;
+  }
+
+
+
+  /* ---------- modal de proyecto ---------- */
+  .modal-overlay{
+    position:fixed;inset:0;
+    background:rgba(113,21,15,0.55);
+    backdrop-filter:blur(3px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    z-index:100;
+  }
+  .modal-overlay.activo{display:flex;}
+  .modal-box{
+    background:var(--crema);
+    border-radius:24px;
+    max-width:560px;
+    width:100%;
+    max-height:85vh;
+    overflow-y:auto;
+    padding:44px;
+    position:relative;
+  }
+  .modal-cerrar{
+    position:absolute;
+    top:20px;right:20px;
+    width:36px;height:36px;
+    border-radius:50%;
+    border:2px solid var(--azul);
+    background:transparent;
+    color:var(--rojo-oscuro);
+    font-size:18px;
+    cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .modal-cerrar:hover{background:var(--azul);border-color:var(--azul);color:var(--rojo-oscuro);}
+  .modal-box .eyebrow-sm{margin-bottom:8px;}
+  .modal-box > div[id^="proyecto-"]{display:none;}
+  .modal-box > div[id^="proyecto-"].activo{display:block;}
+  .modal-box h3{
+    font-size:clamp(26px,3.4vw,34px);
+    margin-bottom:6px;
+  }
+  .modal-categoria{
+    font-family:var(--titulo);
+    font-style:italic;
+    color:var(--carmin);
+    font-size:17px;
+    margin-bottom:22px;
+    display:block;
+  }
+  .modal-box p{
+    font-size:16px;
+    margin-bottom:22px;
+    opacity:0.9;
+  }
+  .modal-servicios h4{
+    font-size:15px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--rojo-oscuro);
+    margin-bottom:12px;
+  }
+  .modal-servicios ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .modal-servicios li{
+    font-size:16px;
+    padding-left:22px;
+    position:relative;
+  }
+  .modal-servicios li::before{
+    content:"—";
+    position:absolute;left:0;
+    color:var(--azul);
+  }
+
+  /* ---------- por que elegirme ---------- */
+  .porque{
+    background:var(--rojo-oscuro);
+  }
+  .porque .eyebrow-sm{color:var(--crema);opacity:0.75;}
+  .porque .section-title{color:var(--crema);}
+  .porque-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:36px;
+  }
+  @media (max-width:700px){
+    .porque-grid{grid-template-columns:1fr;}
+  }
+  .porque-item{
+    background:var(--crema);
+    border-radius:20px;
+    padding:34px;
+    border:1px solid rgba(186,212,237,0.6);
+  }
+  .porque-item .icon{
+    font-size:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:44px;height:44px;
+    border-radius:50%;
+    background:rgba(246,183,207,0.3);
+    margin-bottom:14px;
+  }
+  .porque-item h3{font-size:21px;margin-bottom:8px;}
+  .porque-item p{font-size:16px;color:var(--rojo-oscuro);opacity:0.82;}
+
+  /* ---------- cta ---------- */
+  .cta{
+    background:var(--carmin);
+    color:var(--crema);
+    text-align:center;
+    border-radius:32px;
+    margin:0 32px;
+    padding:80px 40px;
+    position:relative;
+    overflow:hidden;
+  }
+  .cta::before{
+    content:"";
+    position:absolute;
+    top:-120px;left:50%;
+    transform:translateX(-50%);
+    width:400px;height:400px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(238,228,218,0.18), transparent 70%);
+  }
+  .cta-inner{position:relative;z-index:2;max-width:720px;margin:0 auto;}
+  .cta .eyebrow-sm{color:var(--rosa);}
+  .cta h2{
+    color:var(--crema);
+    font-size:clamp(26px,3.2vw,36px);
+    line-height:1.3;
+    margin-bottom:22px;
+  }
+  .cta p{font-size:18px;margin-bottom:28px;opacity:0.92;}
+  .cta-question{
+    font-family:var(--titulo);
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(24px,2.9vw,30px);
+    color:var(--rosa);
+    margin-bottom:34px;
+  }
+  .cta-contact-row{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:16px;
+    margin-top:48px;
+    padding-top:36px;
+    border-top:1px solid rgba(186,212,237,0.35);
+  }
+  .cta-contact-item{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:rgba(238,228,218,0.08);
+    border:1px solid rgba(238,228,218,0.28);
+    border-radius:40px;
+    padding:13px 26px;
+    font-size:15px;
+    color:var(--crema);
+    transition:background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+  .cta-contact-item:hover{
+    background:rgba(238,228,218,0.16);
+    border-color:rgba(238,228,218,0.5);
+    transform:translateY(-2px);
+  }
+  .cta-icon{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:26px;height:26px;
+    border-radius:50%;
+    background:rgba(238,228,218,0.14);
+    font-size:13px;
+    flex-shrink:0;
+  }
+
+  footer{
+    padding:50px 32px 40px;
+    text-align:center;
+    font-size:14px;
+    color:var(--rojo-oscuro);
+    opacity:0.75;
+  }
+  footer .footer-links{
+    margin-top:16px;
+    display:flex;
+    justify-content:center;
+    gap:22px;
+    flex-wrap:wrap;
+  }
+  footer .footer-links a{
+    opacity:1;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition:opacity 0.2s ease;
+  }
+  footer .footer-links a:hover{opacity:0.7;}
+  footer .footer-links a:hover .footer-icon{border-color:var(--azul);background:rgba(246,183,207,0.18);}
+  footer .footer-icon{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:22px;height:22px;
+    border-radius:50%;
+    border:1px solid rgba(113,21,15,0.3);
+    flex-shrink:0;
+    transition:border-color 0.2s ease, background 0.2s ease;
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo"><img src="imagenes/logo-horizontal.svg" alt="Studio Sofine"></div>
+    <div class="navlinks" id="navlinks">
+      <a href="#sobre">Sobre mí</a>
+      <a href="servicios.html">Servicios y precios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto" class="btn" style="padding:10px 22px;font-size:15px;">Hablemos</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <h1>Estrategia para <em>crecer</em>.<br>Contenido con <em>intención</em>.<br>Diseño que <em>conecta</em>.</h1>
+    <p class="hero-sub">Ayudo a marcas a construir una presencia digital profesional.</p>
+    <div class="hero-btns">
+      <a href="servicios.html" class="btn">Ver planes</a>
+      <a href="#sobre" class="btn btn-outline">Conocé Studio Sofine</a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Creatividad</span><span class="dot">•</span>
+    <span>Estrategia</span><span class="dot">•</span>
+    <span>Diseño</span><span class="dot">•</span>
+    <span>Comunicación</span><span class="dot">•</span>
+    <span>Identidad</span><span class="dot">•</span>
+    <span>Contenido</span><span class="dot">•</span>
+    <span>Conexión</span><span class="dot">•</span>
+    <span>Crecimiento</span><span class="dot">•</span>
+    <span>Creatividad</span><span class="dot">•</span>
+    <span>Estrategia</span><span class="dot">•</span>
+    <span>Diseño</span><span class="dot">•</span>
+    <span>Comunicación</span><span class="dot">•</span>
+    <span>Identidad</span><span class="dot">•</span>
+    <span>Contenido</span><span class="dot">•</span>
+    <span>Conexión</span><span class="dot">•</span>
+    <span>Crecimiento</span><span class="dot">•</span>
+  </div>
+</div>
+
+<section id="sobre">
+  <div class="wrap sobre">
+    <div>
+      <span class="eyebrow-sm">Sobre mí</span>
+      <h2>Hola, soy Sofía.</h2>
+      <p>Hace más de cinco años que emprendo y conozco de primera mano los desafíos de construir una marca, comunicar con propósito y mantener una presencia constante en redes sociales. Esa experiencia me permite comprender las necesidades de otros emprendedores y crear soluciones que combinan diseño, estrategia y objetivos concretos.</p>
+      <p>Creé <strong>Studio Sofine</strong>, un estudio creativo que ayuda a emprendedores y negocios a construir una presencia digital profesional a través de la identidad visual, el diseño y una comunicación estratégica.</p>
+      <p>Creo que una marca no solo debe verse bien: debe comunicar con claridad, conectar con las personas adecuadas y acompañar el crecimiento del negocio. Por eso, cada proyecto nace de una estrategia clara y se desarrolla con creatividad, cercanía y atención a cada detalle.</p>
+      <p class="sobre-tagline"><em>Mi objetivo es que cada marca refleje su verdadero valor y comunique con intención.</em></p>
+    </div>
+    <div class="foto-wrap">
+      <div class="foto-marco"><img src="imagenes/img-02.jpg" alt="Foto de Sofía"></div>
+    </div>
+  </div>
+</section>
+
+<section id="servicios" class="servicios-bg">
+  <div class="wrap">
+    <span class="eyebrow-sm">Qué hago</span>
+    <h2 class="section-title">Servicios</h2>
+    <p class="servicios-intro">Acompaño a emprendedores y negocios con soluciones pensadas para construir una presencia digital profesional, coherente y estratégica.</p>
+  </div>
+  <div class="wrap">
+    <div class="servicios-grid">
+      <div class="servicio">
+        <span class="icon">📱</span>
+        <h3>Gestión de Redes</h3>
+        <p>Planificación, diseño y gestión de contenido para hacer crecer tu presencia en redes.</p>
+      </div>
+      <div class="servicio">
+        <span class="icon">🎨</span>
+        <h3>Identidad Visual</h3>
+        <p>Marcas con una imagen profesional, coherente y preparada para diferenciarse.</p>
+      </div>
+      <div class="servicio">
+        <span class="icon">✨</span>
+        <h3>Diseño para Redes</h3>
+        <p>Piezas gráficas personalizadas para comunicar con claridad y mantener una estética consistente.</p>
+      </div>
+      <div class="servicio">
+        <span class="icon">📸</span>
+        <h3>Creación de Contenido</h3>
+        <p>Fotos y videos pensados para mostrar el valor de tu marca.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="servicios.html" class="btn btn-light">Ver todos los servicios</a>
+    </div>
+  </div>
+</section>
+
+<section id="proyectos">
+  <div class="wrap">
+    <span class="eyebrow-sm">Portafolio</span>
+    <h2 class="section-title">Proyectos</h2>
+    <div class="proyectos-grid">
+      <div class="proyecto-card p1" role="button" tabindex="0" onclick="abrirProyecto('medias')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirProyecto('medias');}">
+        <div class="proyecto-img-wrap">
+          <div class="proyecto-img" style="background-image:url('imagenes/img-03.webp');"></div>
+        </div>
+        <div class="proyecto-info">
+          <span class="proyecto-tag">PROYECTO</span>
+          <h3 class="proyecto-nombre">Juego de Medias</h3>
+          <p class="proyecto-servicio">Identidad Visual</p>
+          <span class="proyecto-link">Ver proyecto →</span>
+        </div>
+      </div>
+      <div class="proyecto-card p2" role="button" tabindex="0" onclick="abrirProyecto('luma')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirProyecto('luma');}">
+        <div class="proyecto-img-wrap">
+          <div class="proyecto-img" style="background-image:url('imagenes/img-04.jpg');"></div>
+        </div>
+        <div class="proyecto-info">
+          <span class="proyecto-tag">PROYECTO CONCEPTUAL</span>
+          <h3 class="proyecto-nombre">Luma Studio</h3>
+          <p class="proyecto-servicio">Diseño para Redes Sociales</p>
+          <span class="proyecto-link">Ver proyecto →</span>
+        </div>
+      </div>
+      <div class="proyecto-card p3" role="button" tabindex="0" onclick="abrirProyecto('vita')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirProyecto('vita');}">
+        <div class="proyecto-img-wrap">
+          <div class="proyecto-img" style="background-image:url('imagenes/img-05.jpg');"></div>
+        </div>
+        <div class="proyecto-info">
+          <span class="proyecto-tag">PROYECTO CONCEPTUAL</span>
+          <h3 class="proyecto-nombre">Vita Club</h3>
+          <p class="proyecto-servicio">Diseño para Redes Sociales</p>
+          <span class="proyecto-link">Ver proyecto →</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="porque">
+  <div class="wrap">
+    <span class="eyebrow-sm">¿Por qué Studio Sofine?</span>
+    <h2 class="section-title">Cada proyecto nace de una estrategia clara, un diseño con intención y un trabajo personalizado.</h2>
+    <div class="porque-grid">
+      <div class="porque-item">
+        <span class="icon">✨</span>
+        <h3>Estrategia</h3>
+        <p>Cada decisión responde a objetivos concretos y está pensada para acompañar el crecimiento de tu negocio.</p>
+      </div>
+      <div class="porque-item">
+        <span class="icon">🎨</span>
+        <h3>Diseño con intención</h3>
+        <p>Creo identidades y contenidos que comunican con claridad, generan confianza y reflejan la esencia de cada negocio.</p>
+      </div>
+      <div class="porque-item">
+        <span class="icon">🤝</span>
+        <h3>Trabajo cercano</h3>
+        <p>Cada proyecto es único. Me involucro en el proceso para ofrecer soluciones personalizadas y acompañarte en cada etapa.</p>
+      </div>
+      <div class="porque-item">
+        <span class="icon">📈</span>
+        <h3>Pensado para crecer</h3>
+        <p>El objetivo es que tu marca conecte con las personas adecuadas y genere resultados.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <div class="cta">
+      <div class="cta-inner">
+        <span class="eyebrow-sm">Empecemos</span>
+        <h2>Tu próximo proyecto puede ser el impulso que tu marca necesita para crecer.</h2>
+        <p class="cta-text">Estoy lista para ayudarte a crear una presencia digital estratégica, auténtica y alineada con tus objetivos.</p>
+        <div class="cta-question">¿Querés potenciar tu marca?</div>
+        <a href="https://wa.me/5491128928734" class="btn btn-light" target="_blank" rel="noopener">Escribime por WhatsApp</a>
+        <div class="cta-contact-row">
+          <a href="https://instagram.com/studio.sofine" target="_blank" rel="noopener" class="cta-contact-item">
+            <span class="cta-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5.5"></rect><circle cx="12" cy="12" r="4.6"></circle><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"></circle></svg></span> @studio.sofine
+          </a>
+          <a href="mailto:studio.sofine@gmail.com" class="cta-contact-item">
+            <span class="cta-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"></rect><path d="M3 6.5 12 13 21 6.5"></path></svg></span> studio.sofine@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Studio Sofine — Sofía
+  <div class="footer-links">
+    <a href="https://instagram.com/studio.sofine" target="_blank" rel="noopener">
+      <span class="footer-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5.5"></rect><circle cx="12" cy="12" r="4.6"></circle><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"></circle></svg></span>
+      @studio.sofine
+    </a>
+    <a href="mailto:studio.sofine@gmail.com">
+      <span class="footer-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"></rect><path d="M3 6.5 12 13 21 6.5"></path></svg></span>
+      studio.sofine@gmail.com
+    </a>
+    <a href="https://wa.me/5491128928734" target="_blank" rel="noopener">
+      <span class="footer-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"></path></svg></span>
+      11 2892-8734
+    </a>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="modal-proyecto" onclick="if(event.target===this)cerrarProyecto()">
+  <div class="modal-box">
+    <button class="modal-cerrar" onclick="cerrarProyecto()" aria-label="Cerrar">✕</button>
+
+    <div id="proyecto-vita">
+      <img src="imagenes/img-05.jpg" alt="Feed de Instagram — Vita Club" style="width:100%;border-radius:16px;margin-bottom:24px;">
+      <span class="eyebrow-sm">Proyecto conceptual</span>
+      <h3>Vita Club</h3>
+      <span class="modal-categoria">Diseño para Redes Sociales</span>
+      <p>VITA CLUB es un estudio boutique que combina entrenamiento de fuerza, running y comunidad para personas que buscan entrenar con propósito y disfrutar del proceso.</p>
+      <p>Para este proyecto conceptual desarrollé un sistema visual para Instagram con una propuesta gráfica que fusiona deporte, lifestyle y diseño editorial. El objetivo fue construir una identidad de contenido que diferenciara a la marca de la estética tradicional del fitness, comunicando energía, movimiento y sentido de comunidad.</p>
+      <p>La propuesta combina piezas gráficas y fotografías mediante composiciones dinámicas, una paleta de colores vibrante, tipografías con personalidad y recursos gráficos que aportan ritmo y carácter al feed. Cada publicación fue diseñada para reforzar una marca donde entrenar también significa conectar, compartir y disfrutar del proceso.</p>
+      <p>El resultado es un sistema visual moderno y coherente que refleja la esencia de VITA CLUB como una comunidad que inspira a entrenar, conectar y crecer.</p>
+      <div class="modal-servicios">
+        <h4>Alcance del proyecto</h4>
+        <ul>
+          <li>Sistema visual para Instagram</li>
+          <li>Diseño de publicaciones</li>
+          <li>Dirección visual del feed</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="proyecto-luma">
+      <img src="imagenes/img-04.jpg" alt="Feed de Instagram — Luma Studio" style="width:100%;border-radius:16px;margin-bottom:24px;">
+      <span class="eyebrow-sm">Proyecto conceptual</span>
+      <h3>Luma Studio</h3>
+      <span class="modal-categoria">Diseño para Redes Sociales</span>
+      <p>Luma Studio es un estudio de belleza especializado en skincare facial, diseño de cejas y tratamientos estéticos no invasivos, pensado para mujeres que buscan cuidar su piel y potenciar su belleza natural.</p>
+      <p>Para este proyecto conceptual desarrollé un sistema visual de contenido para Instagram con una propuesta estética que transmite profesionalismo, confianza y bienestar. El objetivo fue crear un feed que fortaleciera la imagen de la marca mediante una comunicación visual elegante, cercana y coherente.</p>
+      <p>La propuesta alterna piezas gráficas con fotografías editoriales para generar equilibrio visual y aportar dinamismo al perfil. A través de una paleta de tonos neutros cálidos, tipografías sofisticadas y composiciones minimalistas, se construyó un sistema visual versátil capaz de comunicar contenido educativo, consejos de skincare, tratamientos y resultados reales sin perder consistencia.</p>
+      <p>El resultado es un feed equilibrado y reconocible que refleja el concepto de marca: "Tu mejor versión, sin filtros."</p>
+      <div class="modal-servicios">
+        <h4>Alcance del proyecto</h4>
+        <ul>
+          <li>Sistema visual para Instagram</li>
+          <li>Diseño de publicaciones</li>
+          <li>Dirección visual del feed</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="proyecto-medias">
+      <img src="imagenes/img-03.webp" alt="Brand board — Juego de Medias" style="width:100%;border-radius:16px;margin-bottom:24px;">
+      <span class="eyebrow-sm">Proyecto</span>
+      <h3>Juego de Medias</h3>
+      <span class="modal-categoria">Identidad Visual</span>
+      <p>Juego de Medias es una marca mayorista de medias y productos de temporada que acompaña a personas que buscan iniciar o hacer crecer su propio emprendimiento.</p>
+      <p>Para este proyecto desarrollé una identidad visual que acompañara la evolución de la marca, manteniendo su esencia cercana y divertida mientras fortalecía su imagen con un sistema visual sólido y profesional. El objetivo fue construir una identidad que transmitiera confianza, accesibilidad y acompañamiento, conectando con emprendedores que buscan crecer.</p>
+      <p>La propuesta se desarrolló a partir de una paleta de colores vibrante, un sistema tipográfico y un conjunto de recursos gráficos ilustrados que aportan personalidad y coherencia a toda la comunicación. Como elemento distintivo, se creó un personaje de marca representado por una media, acompañado por un sistema visual flexible que facilita la aplicación de la identidad en diferentes soportes.</p>
+      <p>El resultado es una identidad visual cercana, reconocible y versátil que combina diversión y profesionalismo, fortaleciendo el posicionamiento de Juego de Medias como una marca confiable y accesible.</p>
+      <div class="modal-servicios">
+        <h4>Alcance del proyecto</h4>
+        <ul>
+          <li>Diseño de logo e isotipo</li>
+          <li>Personaje de marca</li>
+          <li>Paleta cromática</li>
+          <li>Sistema tipográfico</li>
+          <li>Recursos gráficos ilustrados</li>
+          <li>Aplicaciones de identidad</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function abrirProyecto(id){
+    document.querySelectorAll('.modal-box > div[id^="proyecto-"]').forEach(function(el){
+      el.classList.remove('activo');
+    });
+    var elegido = document.getElementById('proyecto-' + id);
+    if(elegido) elegido.classList.add('activo');
+    document.getElementById('modal-proyecto').classList.add('activo');
+    document.body.style.overflow = 'hidden';
+  }
+  function cerrarProyecto(){
+    document.getElementById('modal-proyecto').classList.remove('activo');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') cerrarProyecto();
+  });
+
+  var hamburger = document.getElementById('hamburger');
+  var navlinks = document.getElementById('navlinks');
+  hamburger.addEventListener('click', function(){
+    var abierto = navlinks.classList.toggle('activo');
+    hamburger.classList.toggle('activo', abierto);
+    hamburger.setAttribute('aria-expanded', abierto);
+  });
+  navlinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      navlinks.classList.remove('activo');
+      hamburger.classList.remove('activo');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+  window.addEventListener('resize', function(){
+    if(window.innerWidth > 640){
+      navlinks.classList.remove('activo');
+      hamburger.classList.remove('activo');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>
+
+</body>
+</html>
