@@ -26,7 +26,6 @@
     --azul:#bad4ed;
     --crema:#eee4da;
     --blanco:#FAF9F6;
-    --crema-claro:color-mix(in srgb, var(--crema) 60%, var(--blanco));
     --crema-suave:color-mix(in srgb, var(--crema) 40%, var(--blanco));
     --azul-suave:color-mix(in srgb, var(--azul) 28%, var(--blanco));
 
@@ -181,7 +180,7 @@
   .btn-oscuro:hover{background:transparent;color:var(--rojo-oscuro);transform:translateY(-2px);}
 
   /* ===== hero ===== */
-  .hero{background:var(--crema-claro);padding:60px 0 70px;position:relative;overflow:hidden;}
+  .hero{background:var(--crema);padding:60px 0 70px;position:relative;overflow:hidden;}
   .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:20px;align-items:center;}
   .hero-texto{position:relative;}
   .hero h1{font-size:clamp(46px,6vw,72px);line-height:1;font-weight:400;margin:0 0 24px;}
@@ -204,7 +203,7 @@
   /* gestión de redes */
   .gr-cinta{left:-14px;top:18px;transform:rotate(-20deg);width:84px;}
   .grid-gestion{display:grid;grid-template-columns:290px 1fr;gap:36px;align-items:start;}
-  .gr-lazo{position:relative;display:block;width:78px;height:auto;margin:46px 0 0 118px;transform:rotate(8deg);}
+  .gr-lazo{position:relative;display:block;width:78px;height:auto;margin:14px 0 0 118px;transform:rotate(8deg);}
   .planes{display:grid;grid-template-columns:repeat(3,1fr);}
   .plan{position:relative;border-left:1px solid rgba(113,21,15,0.16);padding:6px 24px 8px;}
   .plan h3{font-size:24px;font-weight:500;margin-bottom:12px;}
@@ -249,12 +248,6 @@
   /* responsive */
   @media (max-width:980px){
     .grid-gestion,.grid-identidad{grid-template-columns:minmax(0,1fr);}
-    .grid-identidad{gap:0;}
-    .grid-identidad > div:first-child{display:contents;}
-    .grid-identidad h2{order:1;}
-    .grid-identidad .bloque-sub{order:2;margin-bottom:34px;}
-    .ident-cols{order:3;}
-    .ident-btn{order:4;margin-top:34px;}
     .cta-flor{display:none;}
   }
   @media (max-width:760px){
@@ -268,7 +261,7 @@
     .checks{grid-auto-flow:row;grid-template-rows:none;}
     .servicios-cols,.ident-cols{grid-template-columns:1fr;gap:34px;}
     .srv{padding:0 0 0 22px;}
-    .gr-lazo{margin:14px 14px 0 auto;}
+    .gr-lazo{margin-left:0;}
     .fila-accion{flex-direction:column;align-items:flex-start;}
     .marcador{flex:none;width:100%;max-width:none;}
   }
@@ -398,14 +391,14 @@
       <div class="ident-cols">
         <div class="srv">
           <h3>Identidad Visual Básica</h3>
-          <div class="precio">$100.000<span> · Pago único</span></div>
+          <div class="precio">$100.000</div>
           <p class="desc">Para marcas que necesitan construir una identidad visual profesional.</p>
           <p class="lbl">Incluye:</p>
           <ul><li>Brief y concepto visual.</li><li>Una propuesta de identidad y una ronda de cambios.</li><li>Logo principal y secundario, con versiones en color, blanco y negro.</li><li>Paleta de colores.</li><li>Selección tipográfica.</li><li>Manual de identidad básico.</li><li>Archivos finales en JPG, PNG, SVG y AI.</li></ul>
         </div>
         <div class="srv">
           <h3>Identidad Visual Completa</h3>
-          <div class="precio">$200.000<span> · Pago único</span></div>
+          <div class="precio">$200.000</div>
           <p class="desc">Para marcas que buscan un sistema visual más amplio y versátil.</p>
           <p class="lbl">Incluye todo lo de la opción Básica, más:</p>
           <ul><li>Variantes adicionales del logo.</li><li>Sellos y recursos gráficos personalizados.</li><li>Sistema tipográfico completo.</li><li>Íconos, patrones y texturas.</li><li>Manual de identidad completo.</li></ul>
